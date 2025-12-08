@@ -54,49 +54,122 @@
             },
             {
                 "action": {
-                    "type": "list",
-                    "actions": [
-                        {
-                            "type": "consent",
-                            "consents": [
-                                {
-                                    "matcher": {
-                                        "type": "checkbox",
-                                        "target": {
-                                            "selector": "#ckySwitchfunctional"
-                                        }
-                                    },
-                                    "toggleAction": {
-                                        "type": "click",
-                                        "target": {
-                                            "selector": "#ckySwitchfunctional"
-                                        }
-                                    },
-                                    "type": "A"
-                                }
-                            ]
+                    "type": "ifallownone",
+                    "trueAction": {
+                        "type": "click",
+                        "target": {
+                            "selector": ".cky-btn-reject"
+                        }
+                    },
+                    "falseAction": {
+                        "type": "ifallowall",
+                        "trueAction": {
+                            "type": "click",
+                            "target": {
+                                "selector": ".cky-btn-accept"
+                            }
                         },
-                        {
-                            "type": "consent",
-                            "consents": [
+                        "falseAction": {
+                            "type": "list",
+                            "actions": [
                                 {
-                                    "matcher": {
-                                        "type": "checkbox",
-                                        "target": {
-                                            "selector": "#ckySwitchadvertisement"
+                                    "type": "consent",
+                                    "consents": [
+                                        {
+                                            "matcher": {
+                                                "type": "checkbox",
+                                                "target": {
+                                                    "selector": "#ckySwitchfunctional"
+                                                }
+                                            },
+                                            "toggleAction": {
+                                                "type": "click",
+                                                "target": {
+                                                    "selector": "#ckySwitchfunctional"
+                                                }
+                                            },
+                                            "type": "A"
                                         }
-                                    },
-                                    "toggleAction": {
-                                        "type": "click",
-                                        "target": {
-                                            "selector": "#ckySwitchadvertisement"
+                                    ]
+                                },
+                                {
+                                    "type": "consent",
+                                    "consents": [
+                                        {
+                                            "matcher": {
+                                                "type": "checkbox",
+                                                "target": {
+                                                    "selector": "#ckySwitchanalytics"
+                                                }
+                                            },
+                                            "toggleAction": {
+                                                "type": "click",
+                                                "target": {
+                                                    "selector": "#ckySwitchanalytics"
+                                                }
+                                            },
+                                            "type": "B"
+                                        },
+                                        {
+                                            "matcher": {
+                                                "type": "checkbox",
+                                                "target": {
+                                                    "selector": "#ckySwitchperformance"
+                                                }
+                                            },
+                                            "toggleAction": {
+                                                "type": "click",
+                                                "target": {
+                                                    "selector": "#ckySwitchperformance"
+                                                }
+                                            },
+                                            "type": "B"
                                         }
-                                    },
-                                    "type": "F"
+                                    ]
+                                },
+                                {
+                                    "type": "consent",
+                                    "consents": [
+                                        {
+                                            "matcher": {
+                                                "type": "checkbox",
+                                                "target": {
+                                                    "selector": "#ckySwitchadvertisement"
+                                                }
+                                            },
+                                            "toggleAction": {
+                                                "type": "click",
+                                                "target": {
+                                                    "selector": "#ckySwitchadvertisement"
+                                                }
+                                            },
+                                            "type": "F"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "consent",
+                                    "consents": [
+                                        {
+                                            "matcher": {
+                                                "type": "checkbox",
+                                                "target": {
+                                                    "selector": "#ckySwitchother"
+                                                }
+                                            },
+                                            "toggleAction": {
+                                                "type": "click",
+                                                "target": {
+                                                    "selector": "#ckySwitchother"
+                                                }
+                                            },
+                                            "type": "X"
+                                        }
+                                    ]
                                 }
                             ]
                         }
-                    ]
+                    }
                 },
                 "name": "DO_CONSENT"
             },
